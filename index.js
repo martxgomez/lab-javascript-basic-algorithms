@@ -83,3 +83,44 @@ for (let i = 0; i < longText.length; i++) {
 }
 
 console.log(wordCount);
+
+
+// Bonus 2
+
+/*"A man, a plan, a canal, Panama!"
+"Amor, Roma"
+"race car"
+"stack cats"
+"step on no pets"
+"taco cat"
+"put it up"
+"Was it a car or a cat I saw?" and "No 'x' in Nixon".*/
+
+let phraseToCheck = "Amor, Roma";
+let phraseToCheckClean = "";
+let phraseToCheckReverseClean = "";
+
+for (let i = 0; i < phraseToCheck.length; i++) {
+    switch (phraseToCheck[i]){
+      case " ":
+      case ".":
+      case ",":
+      case "!":
+      case "?":
+      case "'":
+      case '"':
+        continue;
+    default:
+      phraseToCheckClean += phraseToCheck[i];
+    }
+}
+
+for (let i = (phraseToCheckClean.length-1); i >=0 ; i--) {
+      phraseToCheckReverseClean += phraseToCheckClean[i];
+}
+
+if (phraseToCheckClean.toLowerCase() === phraseToCheckReverseClean.toLowerCase()){
+    console.log("Palindrome");
+}else{
+    console.log("Not palindrome");
+}
